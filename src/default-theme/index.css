@@ -9,6 +9,7 @@
 @import './commandpalette.css';
 @import './help.css';
 @import './about.css';
+@import './apod.css';
 
 body {
   margin: 0;

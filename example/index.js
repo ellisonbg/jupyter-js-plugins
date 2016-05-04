@@ -19,6 +19,7 @@ var app = new phosphide.Application({
     require('jupyter-js-plugins/lib/shortcuts/plugin').shortcutsExtension,
     require('jupyter-js-plugins/lib/about/plugin').aboutExtension,
     require('jupyter-js-plugins/lib/main/plugin').mainExtension,
+    require('jupyter-js-plugins/lib/apod/plugin').APODExtension
   ],
   providers: [
     require('jupyter-js-plugins/lib/documentmanager/plugin').documentManagerProvider,
