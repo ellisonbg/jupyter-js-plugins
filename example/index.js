@@ -22,6 +22,7 @@ var app = new phosphide.Application({
     require('jupyter-js-plugins/lib/about/plugin').aboutExtension,
     require('jupyter-js-plugins/lib/landing/plugin').landingExtension,
     require('jupyter-js-plugins/lib/main/plugin').mainExtension,
+    require('jupyter-js-plugins/lib/activenb/plugin').activeNBExtension,
   ],
   providers: [
     require('jupyter-js-plugins/lib/filehandler/plugin').fileHandlerProvider,
