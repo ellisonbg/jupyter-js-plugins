@@ -14,6 +14,11 @@ import {
   ActiveNotebook
 } from '../notebook/plugin';
 
+import {
+  IKernel, IKernelFuture, IExecuteReply
+} from 'jupyter-js-services';
+
+
 /**
  * The activenb page extension.
  */
@@ -34,7 +39,15 @@ function activateActiveNB(app: Application, notebookMonitor: ActiveNotebook): Pr
   widget.node.appendChild(button);
   app.shell.addToLeftArea(widget);
   button.onclick = () => {
-      console.log(notebookMonitor.activeNotebook);
+      let kernel = notebookMonitor.activeNotebook.model.session.kernel;
+      let exRequest = {
+        code: 'a = 10',
+        silent: true,
+        store_history: false,
+        stop_on_error: true,
+        allow_stdin: false
+      };
+      let future = kernel.execute(exRequest, true);
   };
   
   return Promise.resolve(void 0);
